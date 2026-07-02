@@ -366,7 +366,7 @@ void MainWindow::displayWinner(QLabel *winnerLabel) {
 void MainWindow::onHelpButtonClicked() {
     QMessageBox::about(this, "Справка о создателе",
                       "<h3>Лабораторная работа \"Считалочка\"</h3>"
-                       "<p><b>Создатель:</b> Муляр Кирилл</p>"
+                       "<p><b>Создатель:</b> Муляр Кирилл и Александр Гордейко</p>"
                      "<p><b>Группа:</b> 7</p>"
                        "<p>Программа разработана на C++ с использованием фреймворка Qt.</p>");
 }
