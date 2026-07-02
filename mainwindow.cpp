@@ -55,6 +55,13 @@ MainWindow::MainWindow(QWidget *parent)
     textToSpeech->setVolume(1.0);
     rhymeTimer = new QTimer(this);
     connect(rhymeTimer, &QTimer::timeout, this, &MainWindow::updateRhymeWord);
+        QPushButton *helpButton = new QPushButton("Справка", this);
+    helpButton->setGeometry(10, 10, 80, 25);
+    helpButton->setFont(QFont("Arial", 9));
+    connect(helpButton, &QPushButton::clicked, this, &MainWindow::onHelpButtonClicked);
+    helpButton->show();
+    helpButton->raise();
+
 }
 
 MainWindow::~MainWindow() {
@@ -355,4 +362,11 @@ void MainWindow::displayWinner(QLabel *winnerLabel) {
     winnerTextLabel->setGeometry(centerX - 200, photoY + 130, 400, 60);
     winnerTextLabel->show();
     playSoundEffect("sounds/fireworks.wav");
+}
+void MainWindow::onHelpButtonClicked() {
+    QMessageBox::about(this, "Справка о создателе",
+                      "<h3>Лабораторная работа \"Считалочка\"</h3>"
+                       "<p><b>Создатель:</b> Муляр Кирилл</p>"
+                     "<p><b>Группа:</b> 7</p>"
+                       "<p>Программа разработана на C++ с использованием фреймворка Qt.</p>");
 }
